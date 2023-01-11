@@ -66,6 +66,8 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
+
+
 let hello = [];
 
 const greeting = () => {
@@ -91,10 +93,10 @@ CHALLENGE 5
 Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
 
 Then, write a function named addNumbers that takes in four arguments:
-  - A number to be added to an array
-  - An array into which the number should be added
-  - The number of times the number should be added
-  - A callback function to use to add the numbers to the array (Hint: you already defined it)
+  - A number to be added to an array "num"
+  - An array into which the number should be added "arr"
+  - The number of times the number should be added "times"
+  - A callback function to use to add the numbers to the array (Hint: you already defined it) "callback"
 
 Within the addNumbers function, invoke the callback function as many times as necessary, based on the third argument of the addNumbers function.
 
@@ -103,10 +105,14 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i =0; i<times; i++){
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,10 +130,23 @@ The inventory is formatted like this:
   { name: 'blueberries', available: false }
 ]
 
+inventory[i].name is name of x fruit
+inventory[i].available is fruit available
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
+
+/use foreach to iterate over array, if available=true push to newlist.
+
+
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
+  let listArr = [];
+  availableItems.forEach((item) => {
+    if(item.available){
+      listArr.push(item.name);
+    }
+  });
+
   // Solution code here...
 };
 
