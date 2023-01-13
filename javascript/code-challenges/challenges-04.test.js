@@ -24,14 +24,15 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, upper) => {
+  // This function should first create a new array.
   let newArr=[];
 
+  // Then iterate over the input array and modify each value based on the callback function
+  // Push each updated animal string into the new array
   for(let i=0; i< arr.length; i++){
     newArr.push(upper(arr[i]));
   }
   return newArr;
-
-  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,8 +43,25 @@ Write a function called sortNames that takes an array of names and sorts them al
 For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
+function compare(a, b) {
+  if (a<b) {
+    return -1;
+  }
+  if (a>b) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
+
+
+
 const sortNames = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  newArr.push(arr.sort(compare));
+  return newArr[0];//i had this "correct" but would still fail on test for 20 minutes before looking at the test in terminal and realizing it just wanted the first index
 };
 
 /* ------------------------------------------------------------------------------------------------
