@@ -84,10 +84,26 @@ CHALLENGE 4
 
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, largest to smallest.
 
-HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
+HINT: Do it with a custom sort callback, not with using `.reverse()`. ;) //rude.
 ------------------------------------------------------------------------------------------------ */
 
+function differentCompare(a, b) {
+  if (a>b) {
+    return -1;
+  }
+  if (a<b) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
+//.reverse() that ;)
+
 const sortBackwards = (arr) => {
+  arr.sort(differentCompare);
+  return arr;
   // Solution code here...
 };
 
