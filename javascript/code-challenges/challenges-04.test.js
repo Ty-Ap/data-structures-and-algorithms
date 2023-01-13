@@ -73,6 +73,9 @@ HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
+  // let newArr = [];
+  (arr.sort(compare));
+  return arr;
   // Solution code here...
 };
 
