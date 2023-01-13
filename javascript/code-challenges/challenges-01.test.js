@@ -68,24 +68,37 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 
-let hello = [];
 
-const greeting = () => {
-  hello.forEach(element => {
-    (element.toUpperCase());
+
+function greeting(word){
+  let point='!';
+  word.toUpperCase();
+  return `${word}+${point}`;
+}
+
+
+// const greeting = (word) => {
+//   word.toUpperCase();
+// };
+
+// const greeting = () => {
+//   hello.forEach(element => {
+//     (element.toUpperCase());
+//   });
+//   return hello;
+// };
+
+
+
+const speaker = (arr, greeting) => {
+  arr.forEach(index => {
+    (greeting(index));
   });
-  return hello;
+  return arr;
 };
 
 
-const speaker = (words, greeting) => {
-  words.forEach(element => {
-    hello.push(greeting(element));
-  });
-  return hello;
-};
 
-console.log(hello);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
