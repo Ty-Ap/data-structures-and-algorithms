@@ -11,33 +11,32 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 //Math.pow(x,y) = x^y
 //Math.pow(num,3)
+function cube(x){
+ return x ** 3;
+}
 
+const raisedToTheThird = (arr) =>{
+  const out=[];
+  arr.forEach(num =>out.push(cube(num)));
+  return out;
+  // Solution code here...
+};
 
-
-// const raisedToTheThird = (arr,num) =>{
-//   let array=[];
-//   arr.forEach(Math.pow(num,3));
-//   array.push();
-// };
-
-// // Solution code here...
-
-
-
-
-
-
-
-// arr.forEach((num) => Math.pow(num,3));
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = (arr) => {
-  // Solution code here...
-};
+// function add(x){
+//   return x+1;
+// }
+
+
+const addOne = (arr) => arr.map(num=>num+1);
+
+
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -45,9 +44,10 @@ CHALLENGE 3
 Write a function named addQuestion that, given an array of strings, uses map to return a new array containing each string followed by a question mark character.
 ------------------------------------------------------------------------------------------------ */
 
-const addQuestion = (arr) => {
-  // Solution code here...
-};
+const addQuestion = (arr) => arr.map(x=>x+'?');
+
+
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -56,12 +56,18 @@ Write a function named forLoopTwoToThe that, given an array of integers as input
 
 You may choose to complete this challenge using a for loop, for...in syntax, or for...of syntax.
 
+yeah im just gonna use .map() chief.
+
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
 
-const forLoopTwoToThe = (arr) => {
-  // Solution code here...
-};
+function powerOf(x){
+  return 2 ** x;
+}
+
+const forLoopTwoToThe = (arr) => arr.map(x=>powerOf(x));
+// Solution code here...
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -69,9 +75,16 @@ CHALLENGE 5
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
-const forEachTwoToThe = (arr) => {
-  // Solution code here...
-};
+
+
+const forEachTwoToThe = (arr) =>{
+  const newArr=[];
+  arr.forEach(x=>newArr.push(powerOf(x)));
+  return newArr;
+}
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -79,9 +92,9 @@ CHALLENGE 6
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4 and your forEachTwoToThe function from challenge 5, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const mapTwoToThe = (arr) => {
-  // Solution code here...
-};
+const mapTwoToThe = (arr) => arr.map(x=>powerOf(x));
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
