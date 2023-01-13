@@ -118,6 +118,8 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 
+
+
 const alphabetize = (arr) => {
   arr.sort(compare);
   return arr;
@@ -137,7 +139,22 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
+function priceCompare(a, b) {
+  if (a.price<b.price) {
+    return -1;
+  }
+  if (a.price<b.price) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
 const sortByPrice = (arr) => {
+  arr.sort(priceCompare);
+
+  return arr;
   // Solution code here...
 };
 
