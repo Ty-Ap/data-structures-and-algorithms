@@ -34,18 +34,25 @@ Returns: ['dyoll', 'eimaj'];
 //   }
 // ];
 
-let str= '';
 
-let arr=str.split('');
+// join("");
 
-let getNames = ()=> arr.map((newStr,char,idx)=>{
-  return char+newStr;
-},[]);
+// let str= '';
 
+// let arr=str.split('');
 
-// const getNames = (arr) => arr.reduce((newStr,char)=>{
-//   return char+newStr;
-// },[]);
+// const getNames = (arr) => {
+//   return arr.map((person) => {
+
+//     let letters = person.name.split('');
+//     let reversedLetters = letters.reverse();
+//     let finalReverse = reversedLetters.join('');
+//     return letters;
+//   });
+// };
+
+const getNames =(arr)=>arr.map(e => e.name.split('').reverse().join(''));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
