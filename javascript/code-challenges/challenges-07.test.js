@@ -152,11 +152,17 @@ const gruffaloCrumble = {
     'Bake for 12-15 hours',
   ]
 };
-
+//at [0] slice at(' '+1) -> item without amount
+//then slice(' ' +1) -. item without unit
 
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(ingredient =>{
+    let withoutAmount= ingredient.slice(ingredient.indexOf(' ')+1);
+    let withoutUnit = withoutAmount.slice(withoutAmount.indexOf(' ')+1);
+    result.push(withoutUnit);
+  });
   return result;
 };
 
