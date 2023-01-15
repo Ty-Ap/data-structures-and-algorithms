@@ -24,6 +24,9 @@ let starWarsPeople = [
   }
 ];
 
+
+
+
 function compare(a, b) {
   if (Number(a.height)>Number(b.height)) {
     return -1;
