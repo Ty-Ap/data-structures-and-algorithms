@@ -53,39 +53,37 @@ let characters = [
 ];
 
 
-// function compare(a, b) {
-//   //nested if for alhpabetical?
-//   if (a.children>b.children) {
-//     return -1;
-//   }
-//   if (a.children<b.children) {
-//     return 1;
-//   }
-//   else {
-//     return 0;
-//   }
-// }
-
-// function idk(characters) {
-//   characters.reduce(
-//     (accumulator, currentValue)=>accumulator.children+currentValue.children,
-//     []);
-//   return characters;
-// }
-
-// console.log(idk(characters));
+function compare(a, b) {
+  //nested if for alhpabetical?
+  if (a.children>b.children) {
+    return -1;
+  }
+  if (a.children<b.children) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
 
 
-// function sortByChildren (characters){
-//   return characters.children.sort(compare(characters,characters));
 
-// }
-
-// console.log(sortByChildren());
-
-// const sortByChildren = (charArray) => {
-//   // Solution code here...
-// };
+const sortByChildren = (charArray) => {
+  return charArray.sort((a,b)=> {
+    if(a.children.length === b.children.length){
+      if (a.house.name> b.house.name) {
+        return 1;
+      } else{
+        return -1;
+      }
+    }
+    else if(a.children.length>b.children.length){
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -134,15 +132,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let arr = str.split(' ');
-  let newArr =[];
-
-
-
-  newArr.push(/^[A_Z][a-z]*/.test(arr));
-
-  return newArr;
-
+  let regexPattern = /\b[A-Z]\w*/g;
+  return str.match(regexPattern) ||[];
 
 };
 
@@ -153,7 +144,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let regexPattern =/^[A-J]\W*/;
+  let newArr= [];
+  arr.forEach(element=> {
+    if (regexPattern.test(element) ===true){
+      newArr.push(element);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
