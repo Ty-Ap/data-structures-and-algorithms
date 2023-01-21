@@ -159,7 +159,7 @@ const hasChildrenValues = (arr, character) => {
         }
       });
     }
-  });
+  })
 
   return children ? true : false;
 };
