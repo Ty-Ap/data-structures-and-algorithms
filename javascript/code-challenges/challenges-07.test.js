@@ -78,7 +78,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  return arr.reduce((a,b)=>`${a+' '+b}`);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,7 +96,11 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let i=0;i<str.length+1;i++){
+    let y=str.slice(0,i);
+    result.push(y);
+  }
+
   return result;
 };
 
