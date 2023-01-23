@@ -77,14 +77,23 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];//slow loop here
 
 const grandTotal = (stores) => {
-  for(let i=0;i<hoursOpen.length;i++){
+
+  for(let i=0;i<hoursOpen.length.length;i++){
+    let totalHours = 0;
     for(let j=0;j<cookieStores.length;j++){
-      let totalHours = cookieStores[1]+cookieStores[i];
+      totalHours= totalHours + cookieStores[j].cookieStores[j[i]];
       console.log(totalHours);
     }
   }
 };
 
+// ;
+// for (let i = 0; i < hours.length; i++) {
+//   let totalHours = 0;
+//   for (let j = 0; j < storeArray.length; j++) {
+//     totalHours = totalHours + storeArray[j].cookieSales[i];
+//     grandTotal =+ totalHours +storeArray[j].cookieSales[i];
+//   }
 
 
 
@@ -107,9 +116,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let empty=[];
+  hours.reduce(hours.hour =>  )
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
