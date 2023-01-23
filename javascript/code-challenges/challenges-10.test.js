@@ -1,5 +1,7 @@
 'use strict';
 
+const { empty } = require("cheerio/lib/api/manipulation");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -77,14 +79,15 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];//slow loop here
 
 const grandTotal = (stores) => {
-
-  for(let i=0;i<hoursOpen.length.length;i++){
-    let totalHours = 0;
-    for(let j=0;j<cookieStores.length;j++){
-      totalHours= totalHours + cookieStores[j].cookieStores[j[i]];
-      console.log(totalHours);
+  let grandSales =[];
+  for(let i=0;i<hoursOpen.length;i++){
+    let hourlyTotal=0;
+    for(let j=0; j<stores.length; j++){
+    hourlyTotal += stores[j][i];
     }
+    grandSales.push(hourlyTotal);
   }
+  return grandSales;
 };
 
 // ;
@@ -117,7 +120,14 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   let empty=[];
-  hours.reduce(hours.hour =>  )
+  data.forEach((cookieValue, idx) =>{
+    empty.push({
+      sales: `${cookieValue} cookies` ,
+      time: hours[idx],
+    });
+  });
+
+  return empty;
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -140,8 +150,8 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) => {
-  // Solution code here...
+const howManyTreats = (errands) => {
+  return errands[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
