@@ -35,23 +35,11 @@ Returns: ['dyoll', 'eimaj'];
 // ];
 
 
-// join("");
+const getNames = (arr) => {
+  let newArr = arr.map(obj => `${obj.name.split('').reverse().join('')}`);
+  return newArr;
+};
 
-// let str= '';
-
-// let arr=str.split('');
-
-// const getNames = (arr) => {
-//   return arr.map((person) => {
-
-//     let letters = person.name.split('');
-//     let reversedLetters = letters.reverse();
-//     let finalReverse = reversedLetters.join('');
-//     return letters;
-//   });
-// };
-
-const getNames =(arr)=>arr.map(e => e.name.split('').reverse().join(''));
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,9 +48,8 @@ CHALLENGE 2
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
 
 ------------------------------------------------------------------------------------------------ */
-
 const appendTheEnd = (str) => {
-  // Solution code here...
+  return `${str} The end.`;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -78,8 +65,9 @@ appendFirstToLast(a);
 console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
+
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+  arr.push(arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +86,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+  obj.yearBorn = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
