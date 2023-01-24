@@ -79,6 +79,7 @@ const divisibleByFiveTwoToThePower = (input) => {
   return newArr;
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
