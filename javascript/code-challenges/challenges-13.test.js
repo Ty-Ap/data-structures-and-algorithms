@@ -10,7 +10,7 @@ for example ['','q','qw','qwe','saghnet'] returns 4
 
 function longestString(strings) {
   let longest = 0;
-  let index = 0;
+  let index = -1;
   for (let i = 0; i < strings.length; i++) {
     if (strings[i].length > longest) {
       longest = strings[i].length;
