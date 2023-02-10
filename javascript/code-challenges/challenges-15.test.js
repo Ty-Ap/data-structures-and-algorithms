@@ -168,9 +168,46 @@ Here is a sample board:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const detectTicTacToeWin = (board) => {
-  // Solution code here...
+
+const detectTicTacToeWin = (board)=>{
+  let sampleBoard=board;
+
+  let firstRow= sampleBoard[0];
+  let secondRow= sampleBoard[1];
+  let thirdRow= sampleBoard[2];
+
+  let firstRow0=firstRow[0];
+  let firstRow1=firstRow[1];
+  let firstRow2=firstRow[2];
+
+  let secondRow0=secondRow[0];
+  let secondRow1=secondRow[1];
+  let secondRow2=secondRow[2];
+
+  let thirdRow0=thirdRow[0];
+  let thirdRow1=thirdRow[1];
+  let thirdRow2=thirdRow[2];
+
+
+
+  if(!firstRow&&secondRow&&thirdRow.includes('')
+  (firstRow0===firstRow1&&firstRow1===firstRow2)||
+  (firstRow0===secondRow0&&secondRow0===thirdRow0)||
+  (firstRow0===secondRow1&&secondRow1===thirdRow2)||
+  (secondRow0===secondRow1&&secondRow1===secondRow2)||
+  (thirdRow0===thirdRow1&&thirdRow1===thirdRow2)||
+  (firstRow1===secondRow1&&secondRow1===thirdRow1)||
+  (firstRow2===secondRow2&&secondRow2===thirdRow2)){
+    return true;
+  } else {
+    return false;
+  }
 };
+
+
+// const detectTicTacToeWin = (board) => {
+//   helpCheck(board);
+// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
